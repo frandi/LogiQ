@@ -26,12 +26,37 @@ namespace LogiQ
                 UserProfile profile = db.UserProfiles.Where(u => u.UserName == userName).FirstOrDefault();
                 user.UserId = profile.UserId;
                 user.UserName = profile.UserName;
+                user.FirstName = profile.FirstName;
+                user.LastName = profile.LastName;
                 user.Email = profile.Email;
-
+                user.Phone = profile.Phone;
                 user.Roles = System.Web.Security.Roles.GetRolesForUser(userName);
             }
             
             return user;
+        }
+
+        public static IEnumerable<MembershipUser> GetAllUsers()
+        {
+            IList<MembershipUser> mUsers = new List<MembershipUser>();
+
+            LogiQContext db = new LogiQContext();
+            var profiles = db.UserProfiles.OrderBy(u => u.UserName).ToList();
+            foreach (var profile in profiles)
+            {
+                MembershipUser mUser = new MembershipUser();
+                mUser.UserId = profile.UserId;
+                mUser.UserName = profile.UserName;
+                mUser.FirstName = profile.FirstName;
+                mUser.LastName = profile.LastName;
+                mUser.Email = profile.Email;
+                mUser.Phone = profile.Phone;
+                mUser.Roles = System.Web.Security.Roles.GetRolesForUser(profile.UserName);
+
+                mUsers.Add(mUser);
+            }
+
+            return mUsers;
         }
 
         public static bool Login(string userName, string password, bool persistCookie = false)
@@ -47,7 +72,10 @@ namespace LogiQ
                 UserProfile profile = db.UserProfiles.Where(u => u.UserName == user.UserName).FirstOrDefault();
                 if (profile != null)
                 {
+                    profile.FirstName = user.FirstName;
+                    profile.LastName = user.LastName;
                     profile.Email = user.Email;
+                    profile.Phone = user.Phone;
 
                     db.SaveChanges();
 

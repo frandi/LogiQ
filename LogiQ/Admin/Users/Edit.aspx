@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="LogiQ.Admin.Users.Edit" %>
+﻿<%@ Page Title="Admin: Edit User" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="LogiQ.Admin.Users.Edit" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="lblMessage" runat="server"></asp:Label>
@@ -19,12 +19,24 @@
             </dd>
         </dl>
         <dl>
+            <dt>First Name</dt>
+            <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+        </dl>
+        <dl>
+            <dt>Last Name</dt>
+            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+        </dl>
+        <dl>
             <dt>Email</dt>
             <dd>
                 <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic"
                     Text="*" ErrorMessage="Email cannot empty" ValidationGroup="EditUser"></asp:RequiredFieldValidator>
             </dd>
+        </dl>
+        <dl>
+            <dt>Phone</dt>
+            <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
         </dl>
         <dl id="dlPassword" runat="server" visible='<%# !dlUserId.Visible %>'>
             <dt>Password</dt>
@@ -63,4 +75,5 @@
             </dd>
         </dl>
     </fieldset>
+    <p><a href="~/Admin/Users" runat="server">Back to User List</a></p>
 </asp:Content>

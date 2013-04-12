@@ -39,7 +39,10 @@ namespace LogiQ.Admin.Users
 
                     lblUserId.Text = user.UserId.ToString();
                     txtUsername.Text = user.UserName;
+                    txtFirstName.Text = user.FirstName;
+                    txtLastName.Text = user.LastName;
                     txtEmail.Text = user.Email;
+                    txtPhone.Text = user.Phone;
 
                     dlUserId.Visible = true;
 
@@ -81,7 +84,10 @@ namespace LogiQ.Admin.Users
                 {
                     if (user != null)
                     {
+                        user.FirstName = txtFirstName.Text;
+                        user.LastName = txtLastName.Text;
                         user.Email = txtEmail.Text;
+                        user.Phone = txtPhone.Text;
 
                         string sRole = "";
                         for (int i = 0; i < chkRoles.Items.Count; i++)

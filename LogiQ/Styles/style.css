@@ -1,0 +1,11 @@
+/*
+Custom styles
+*/
+
+.navbar ul li p {
+    color: white;
+}
+
+.navbar ul li p a {
+    color: #c3e4bd;
+}

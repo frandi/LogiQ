@@ -17,8 +17,9 @@ namespace LogiQ.Admin.Users
 
         public System.Collections.IEnumerable rptUsers_GetData()
         {
-            LogiQContext db = new LogiQContext();
-            return db.UserProfiles.OrderBy(u => u.UserName);
+            return LogiQWebSecurity.GetAllUsers().OrderBy(u => u.FullName);
         }
+
+        
     }
 }
