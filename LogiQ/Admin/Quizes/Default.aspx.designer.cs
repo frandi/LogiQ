@@ -7,28 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogiQ.Quiz {
+namespace LogiQ.Admin.Quizes {
     
     
     public partial class Default {
-        
-        /// <summary>
-        /// pnlQuizFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlQuizFilter;
-        
-        /// <summary>
-        /// ddlQuizFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlQuizFilter;
         
         /// <summary>
         /// rptQuiz control.

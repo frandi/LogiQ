@@ -10,6 +10,29 @@ namespace LogiQ.Helpers
     public static class ConversionHelper
     {
         /// <summary>
+        /// Convert String to Boolean (dafult value = false)
+        /// </summary>
+        /// <param name="source">String</param>
+        /// <returns>Boolean</returns>
+        public static bool ToBoolean(this string source)
+        {
+            return ToBoolean(source, false);
+        }
+
+        /// <summary>
+        /// Convert String to Boolean
+        /// </summary>
+        /// <param name="source">String</param>
+        /// <param name="defaultValue">Default value if conversion failed</param>
+        /// <returns>Boolean</returns>
+        public static bool ToBoolean(this string source, bool defaultValue)
+        {
+            bool result = defaultValue;
+            bool.TryParse(source, out result);
+            return result;
+        }
+
+        /// <summary>
         /// Convert List to DataTable
         /// </summary>
         /// <typeparam name="T">Object Type</typeparam>

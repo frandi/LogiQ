@@ -14,6 +14,29 @@ namespace LogiQ
             return WebMatrix.WebData.WebSecurity.CreateUserAndAccount(userName, password, new { Email = email }, requireConfirmationToken);
         }
 
+        public static IEnumerable<MembershipUser> GetAllUsers()
+        {
+            IList<MembershipUser> mUsers = new List<MembershipUser>();
+
+            LogiQContext db = new LogiQContext();
+            var profiles = db.UserProfiles.OrderBy(u => u.UserName).ToList();
+            foreach (var profile in profiles)
+            {
+                MembershipUser mUser = new MembershipUser();
+                mUser.UserId = profile.UserId;
+                mUser.UserName = profile.UserName;
+                mUser.FirstName = profile.FirstName;
+                mUser.LastName = profile.LastName;
+                mUser.Email = profile.Email;
+                mUser.Phone = profile.Phone;
+                mUser.Roles = System.Web.Security.Roles.GetRolesForUser(profile.UserName);
+
+                mUsers.Add(mUser);
+            }
+
+            return mUsers;
+        }
+
         public static MembershipUser GetUser(string userName)
         {
             MembershipUser user = null;
@@ -36,27 +59,14 @@ namespace LogiQ
             return user;
         }
 
-        public static IEnumerable<MembershipUser> GetAllUsers()
+        public static int GetCurrentUserId()
         {
-            IList<MembershipUser> mUsers = new List<MembershipUser>();
+            return WebMatrix.WebData.WebSecurity.CurrentUserId;
+        }
 
-            LogiQContext db = new LogiQContext();
-            var profiles = db.UserProfiles.OrderBy(u => u.UserName).ToList();
-            foreach (var profile in profiles)
-            {
-                MembershipUser mUser = new MembershipUser();
-                mUser.UserId = profile.UserId;
-                mUser.UserName = profile.UserName;
-                mUser.FirstName = profile.FirstName;
-                mUser.LastName = profile.LastName;
-                mUser.Email = profile.Email;
-                mUser.Phone = profile.Phone;
-                mUser.Roles = System.Web.Security.Roles.GetRolesForUser(profile.UserName);
-
-                mUsers.Add(mUser);
-            }
-
-            return mUsers;
+        public static bool IsCurrentUserAuthenticated()
+        {
+            return WebMatrix.WebData.WebSecurity.IsAuthenticated;
         }
 
         public static bool Login(string userName, string password, bool persistCookie = false)

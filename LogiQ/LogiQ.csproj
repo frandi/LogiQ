@@ -92,6 +92,8 @@
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Quizes\Default.aspx" />
+    <Content Include="Admin\Quizes\Edit.aspx" />
     <Content Include="Admin\Users\Default.aspx" />
     <Content Include="Admin\Users\Edit.aspx" />
     <Content Include="Admin\Users\Role.aspx" />
@@ -102,6 +104,7 @@
     <Content Include="Admin\Admin.Master" />
     <None Include="BundleTransformer.Configuration.xsd" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Quiz\Item.aspx" />
     <Content Include="Scripts\gumby.js" />
     <Content Include="Scripts\gumby.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -150,6 +153,20 @@
     <Compile Include="Admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Quizes\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Quizes\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Quizes\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Quizes\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Users\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -173,6 +190,7 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\LogiQuiz.cs" />
     <Compile Include="Classes\LogiQWebSecurity.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -201,6 +219,10 @@
     <Compile Include="Migrations\201304110514526_AddPropertiesToUserTable.Designer.cs">
       <DependentUpon>201304110514526_AddPropertiesToUserTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304150331264_AddUserQuizItemTable.cs" />
+    <Compile Include="Migrations\201304150331264_AddUserQuizItemTable.Designer.cs">
+      <DependentUpon>201304150331264_AddUserQuizItemTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LogiQContext.cs" />
     <Compile Include="Models\QuizItem.cs" />
@@ -212,6 +234,13 @@
     </Compile>
     <Compile Include="Quiz\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz\Item.aspx.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quiz\Item.aspx.designer.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -262,9 +291,11 @@
     <EmbeddedResource Include="Migrations\201304110514526_AddPropertiesToUserTable.resx">
       <DependentUpon>201304110514526_AddPropertiesToUserTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304150331264_AddUserQuizItemTable.resx">
+      <DependentUpon>201304150331264_AddUserQuizItemTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Quizes\" />
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
   </ItemGroup>

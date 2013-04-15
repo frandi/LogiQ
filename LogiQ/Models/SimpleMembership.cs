@@ -61,6 +61,8 @@ namespace LogiQ.Models
         public DateTime? PasswordVerificationTokenExpirationDate { get; set; }
     }
 
+    #region View Models
+
     public class MembershipUser
     {
         public int UserId { get; set; }
@@ -97,4 +99,6 @@ namespace LogiQ.Models
             }
         }
     }
+
+    #endregion View Models
 }

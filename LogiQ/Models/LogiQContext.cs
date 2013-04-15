@@ -14,6 +14,7 @@ namespace LogiQ.Models
         public DbSet<OAuthMembership> OAuthMemberships { get; set; }
         public DbSet<Membership> Memberships { get; set; }
         public DbSet<QuizItem> QuizItems { get; set; }
+        public DbSet<UserQuizItem> UserQuizItems { get; set; }
 
         public LogiQContext()
             :base("DefaultConnection")
