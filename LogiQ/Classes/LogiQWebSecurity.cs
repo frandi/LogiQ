@@ -9,9 +9,15 @@ namespace LogiQ
 {
     public static class LogiQWebSecurity
     {
-        public static string CreateUserAndAccount(string userName, string password, string email, bool requireConfirmationToken = false)
+        public static MembershipUser CreateUserAndAccount(string userName, string password, string email, bool requireConfirmationToken = false)
         {
-            return WebMatrix.WebData.WebSecurity.CreateUserAndAccount(userName, password, new { Email = email }, requireConfirmationToken);
+            MembershipUser user = null;
+
+            WebMatrix.WebData.WebSecurity.CreateUserAndAccount(userName, password, new { Email = email }, requireConfirmationToken);
+
+            user = GetUser(userName);
+
+            return user;
         }
 
         public static IEnumerable<MembershipUser> GetAllUsers()
@@ -100,6 +106,11 @@ namespace LogiQ
                     }
                 }
             }
+        }
+
+        public static bool ChangePassword(string userName, string oldPassword, string newPassword)
+        {
+            return WebMatrix.WebData.WebSecurity.ChangePassword(userName, oldPassword, newPassword);
         }
 
         public static bool RolesChanged(string[] currentRole, string[] newRole)

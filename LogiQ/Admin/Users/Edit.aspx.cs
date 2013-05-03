@@ -75,13 +75,25 @@ namespace LogiQ.Admin.Users
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (IsValid)
             {
-                MembershipUser user = LogiQWebSecurity.GetUser(txtUsername.Text);
-
-                int uId = lblUserId.Text.ToInteger();
-                if (uId > 0)
+                try
                 {
+                    bool newUser = false;
+                    MembershipUser user = LogiQWebSecurity.GetUser(txtUsername.Text);
+
+                    int uId = lblUserId.Text.ToInteger();
+                    if (uId == 0)
+                    {
+                        if (user == null)
+                        {
+                            user = LogiQWebSecurity.CreateUserAndAccount(txtUsername.Text, txtPassword.Text, txtEmail.Text);
+                            newUser = true;
+                        }
+                        else
+                            throw new Exception("User {0} was taken. Please choose other username.");
+                    }
+
                     if (user != null)
                     {
                         user.FirstName = txtFirstName.Text;
@@ -103,25 +115,36 @@ namespace LogiQ.Admin.Users
 
                         LogiQWebSecurity.UpdateUser(user);
 
-                        lblMessage.Text = "Success";
+                        if (newUser)
+                            Response.Redirect("Edit.aspx?u=" + user.UserName);
+                        else
+                            lblMessage.Text = "Success, user profile updated!";
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (user == null)
-                    {
-                        LogiQWebSecurity.CreateUserAndAccount(txtUsername.Text, txtPassword.Text, txtEmail.Text);
-                        Response.Redirect(Request.RawUrl);
-                    }
-                    else
-                        throw new Exception("User {0} was taken. Please choose other username.");
+                    lblMessage.Text = ex.GetLongMessages();
                 }
             }
-            catch (Exception ex)
+        }
+
+        protected void btnSavePassword_Click(object sender, EventArgs e)
+        {
+            if (IsValid)
             {
-                lblMessage.Text = ex.GetLongMessages();
+                try
+                {
+                    string userName = Request.QueryString["u"];
+                    if (LogiQWebSecurity.ChangePassword(userName, txtOldPassword.Text, txtNewPassword.Text))
+                        lblMessage.Text = "Success, password changed!";
+                    else
+                        throw new Exception("Failed! Please check the old password.");
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = ex.GetLongMessages();
+                }
             }
-            
         }
 
         class UserRoles
@@ -129,5 +152,7 @@ namespace LogiQ.Admin.Users
             public string Role { get; set; }
             public bool IsUserInRole { get; set; }
         }
+
+        
     }
 }

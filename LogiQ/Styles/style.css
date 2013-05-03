@@ -9,3 +9,18 @@ Custom styles
 .navbar ul li p a {
     color: #c3e4bd;
 }
+
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+th, td {
+    padding: 3px 10px;
+}
+
+th {
+    background: #808080;
+    color: white;
+    font-weight: bold;
+}

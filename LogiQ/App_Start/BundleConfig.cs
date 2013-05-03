@@ -13,6 +13,8 @@ namespace LogiQ
             bundles.Add(new ScriptBundle("~/bundles/Scripts").Include(
                   "~/Scripts/jquery-1.9.1.js",
                   "~/Scripts/gumby.js",
+                  "~/Scripts/ui/gumby.tabs.js",
+                  "~/Scripts/gumby.init.js",
                   "~/Scripts/plugins.js",
                   "~/Scripts/main.js"));
 

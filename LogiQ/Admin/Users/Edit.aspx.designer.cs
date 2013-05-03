@@ -49,6 +49,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.WebControls.Label lblUserId;
         
         /// <summary>
+        /// lblForUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForUsername;
+        
+        /// <summary>
         /// txtUsername control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUsername;
         
         /// <summary>
+        /// lblForFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForFirstName;
+        
+        /// <summary>
         /// txtFirstName control.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
         
         /// <summary>
+        /// lblForLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForLastName;
+        
+        /// <summary>
         /// txtLastName control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace LogiQ.Admin.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        
+        /// <summary>
+        /// lblForEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForEmail;
         
         /// <summary>
         /// txtEmail control.
@@ -103,6 +139,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
         
         /// <summary>
+        /// lblForPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForPhone;
+        
+        /// <summary>
         /// txtPhone control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace LogiQ.Admin.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dlPassword;
+        
+        /// <summary>
+        /// lblForPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForPassword;
         
         /// <summary>
         /// txtPassword control.
@@ -148,6 +202,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dlConfirmPassword;
         
         /// <summary>
+        /// lblForConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForConfirmPassword;
+        
+        /// <summary>
         /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
@@ -166,6 +229,15 @@ namespace LogiQ.Admin.Users {
         protected global::System.Web.UI.WebControls.CompareValidator cvConfirmPassword;
         
         /// <summary>
+        /// lblForRoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForRoles;
+        
+        /// <summary>
         /// chkRoles control.
         /// </summary>
         /// <remarks>
@@ -182,5 +254,95 @@ namespace LogiQ.Admin.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+        
+        /// <summary>
+        /// lblForOldPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForOldPassword;
+        
+        /// <summary>
+        /// txtOldPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOldPassword;
+        
+        /// <summary>
+        /// rfvOldPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOldPassword;
+        
+        /// <summary>
+        /// lblForNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForNewPassword;
+        
+        /// <summary>
+        /// txtNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+        
+        /// <summary>
+        /// rfvNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNewPassword;
+        
+        /// <summary>
+        /// lblForConfirmNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblForConfirmNewPassword;
+        
+        /// <summary>
+        /// txtConfirmNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmNewPassword;
+        
+        /// <summary>
+        /// cvConfirmNewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvConfirmNewPassword;
+        
+        /// <summary>
+        /// btnSavePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSavePassword;
     }
 }

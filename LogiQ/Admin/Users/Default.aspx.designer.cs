@@ -13,6 +13,15 @@ namespace LogiQ.Admin.Users {
     public partial class Default {
         
         /// <summary>
+        /// lnkNewUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkNewUser;
+        
+        /// <summary>
         /// rptUsers control.
         /// </summary>
         /// <remarks>
